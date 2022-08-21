@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel='stylesheet' href="./assets/css/style.css" />
+    <title>League of Legends Quiz</title>
 </head>
+
 <body>
-    
+    <header>
+        <h1>League of Legends Quiz</h1>
+        <nav>
+            <h2 class=view-score>View Hight Scores</h2>
+            <h2 class="timer">Timer</h2>
+            <p> Your time left is <span id="countdowntimer">75 </span> Seconds</p>
+        </nav>
+
+        <main>
+            <section class="quiz">
+                <h3>League of Legends Challenge</h3>
+                <p>Try to anwer the following code-related questions within the time limit<br>Keep in mind that
+                    incorrect ansers will penalize your score/time<br>by then secounds!</p>
+                <div>
+                    <button id="startQuiz">Start Quiz</button>
+                </div>
+            </section>
+
+            <section>
+                <p id="question"></p>
+                <button id="choice1"></button>
+                <button id="choice2"></button>
+                <button id="choice3"></button>
+                <button id="choice4"></button>
+
+            </section id='endgame'>
+                <h4>All done!!</h4>
+                <h5>Your final score is</h5>
+                <h5>Enter initials:<button>Submit</button></h5>          
+            <section>
+
+            </section>
+        </main>
+
+    </header>
+    <script src="./assets/js/script.js"> </script>
 </body>
 </html>
