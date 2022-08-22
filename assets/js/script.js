@@ -7,12 +7,12 @@ const answerEl = document.getElementById('answer');
 const endGameEl = document.getElementById('endGame');
 
 
-var emailInput = document.querySelector("#email");
-var passwordInput = document.querySelector("#password");
+var uniInput = document.querySelector("#ini");
+var scoreInput = document.querySelector("#score");
 var storeButton = document.querySelector("#sign-up");
 var msgDiv = document.querySelector("#msg");
-var initialSpan = document.querySelector("#user-email");
-var userPasswordSpan = document.querySelector("#user-password");
+var initialSpan = document.querySelector("#user-uni");
+var userScoreSpan = document.querySelector("#user-score");
 
 choice1El.addEventListener('click', nextQuestion);
 choice2El.addEventListener('click', nextQuestion);
@@ -122,18 +122,18 @@ function displayMessage(type, message) {
 }
 
 function renderLastScore() {
-    var storedInitial = localStorage.getItem("storedEmail");
-    var passwordFromLs = localStorage.getItem("storedPassword");
+    var storedInitial = localStorage.getItem("storedIni");
+    var passwordFromLs = localStorage.getItem("storedScore");
     initialSpan.textContent = storedInitial;
-    userPasswordSpan.textContent = passwordFromLs;
+    userScoreSpan.textContent = passwordFromLs;
     // TODO: Retrieve the last email and password and render it to the page
 }
 
 storeButton.addEventListener("click", function (event) {
     event.preventDefault();
 
-    var initial = document.querySelector("#email").value;
-    var score = document.querySelector("#password").value;
+    var initial = document.querySelector("#ini").value;
+    var score = document.querySelector("#score").value;
 
     if (initial === "") {
         displayMessage("error", "Initials cannot be blank");
@@ -142,8 +142,8 @@ storeButton.addEventListener("click", function (event) {
 
         // TODO: Save email and password to localStorage and render the last registered user
 
-        localStorage.setItem('storedEmail', initial);
-        localStorage.setItem('storedPassword', score);
+        localStorage.setItem('storedIni', initial);
+        localStorage.setItem('storedScore', score);
         renderLastScore();
     }
 });
