@@ -13,7 +13,6 @@
     <header>
         <h1>League of Legends Quiz</h1>
         <nav>
-            <h2 class=view-score>View Hight Scores</h2>
             <h2 class="timer">Timer</h2>
             <p> Your time left is <span id="countdowntimer">75 </span> Seconds</p>
         </nav>
@@ -28,23 +27,28 @@
                 </div>
             </section>
 
-            <section>
+            <section class="preguntas">
                 <p id="question"></p>
                 <button id="choice1"></button>
                 <button id="choice2"></button>
                 <button id="choice3"></button>
                 <button id="choice4"></button>
-
-            </section id='endgame'>
-                <h4>All done!!</h4>
-                <h5>Your final score is</h5>
-                <h5>Enter initials:<button>Submit</button></h5>          
-            <section>
-
+                <p id="answer"></p>
             </section>
+
+            <section id='endGame'>
+                <!-- <ul>
+                    <h5 id='allDone'>All Done!</h5>
+                    <h5 id="initials"> Enter Your Initials: <input id="label"></input>
+                        <button id="sumit">Summit</button>
+                    </h5>
+                </ul> -->
+            </section>
+
         </main>
 
     </header>
     <script src="./assets/js/script.js"> </script>
 </body>
+
 </html>
