@@ -45,6 +45,32 @@
                 </ul> -->
             </section>
 
+            <section>
+                <div class="card">
+                    <h2>Register High Score</h2>
+                    <form method="POST">
+                      <div class="input-group">
+                        <label for="email">Initals</label>
+                        <input type="text" name="email" id="email" placeholder="Enter Initials" />
+                      </div>
+                      <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="must be stored" />
+                      </div>
+                      <div id="msg"></div>
+                      <button id="sign-up">Store High</button>
+                    </form>
+                  </div>
+            
+                  <div class="card">
+                    <h2>Last Registered User:</h2>
+                    <p><strong>Initials:</strong> <span id="user-email"></span></p>
+                    <p><strong>Last Score:</strong> <span id="user-password"></span></p>
+                  </div>
+                </div>
+            </section>
+          
+
         </main>
 
     </header>

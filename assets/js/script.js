@@ -6,6 +6,14 @@ const choice4El = document.getElementById('choice4');
 const answerEl = document.getElementById('answer');
 const endGameEl = document.getElementById('endGame');
 
+
+var emailInput = document.querySelector("#email");
+var passwordInput = document.querySelector("#password");
+var storeButton = document.querySelector("#sign-up");
+var msgDiv = document.querySelector("#msg");
+var initialSpan = document.querySelector("#user-email");
+var userPasswordSpan = document.querySelector("#user-password");
+
 choice1El.addEventListener('click', nextQuestion);
 choice2El.addEventListener('click', nextQuestion);
 choice3El.addEventListener('click', nextQuestion);
@@ -73,7 +81,7 @@ function displayQuestion() {
         }, 1000);
         unique = 1;
     }
-    
+
     const curr = questions[currentQuestionIndex];
     questionEl.innerText = curr.question;
     choice1El.innerText = curr.choices[0];
@@ -102,9 +110,40 @@ function nextQuestion(event) {
         displayQuestion()
     }
     else {
-        endGameEl.innerText = "All Done";
+        endGameEl.innerText = "Quiz Finish";
     }
 }
 
-// localStorage.setItem('timeleft')
-//         document.getElementById('finalScore')
+renderLastScore();
+
+function displayMessage(type, message) {
+    msgDiv.textContent = message;
+    msgDiv.setAttribute("class", type);
+}
+
+function renderLastScore() {
+    var storedInitial = localStorage.getItem("storedEmail");
+    var passwordFromLs = localStorage.getItem("storedPassword");
+    initialSpan.textContent = storedInitial;
+    userPasswordSpan.textContent = passwordFromLs;
+    // TODO: Retrieve the last email and password and render it to the page
+}
+
+storeButton.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    var initial = document.querySelector("#email").value;
+    var score = document.querySelector("#password").value;
+
+    if (initial === "") {
+        displayMessage("error", "Initials cannot be blank");
+    } else {
+        displayMessage("success", "Stored Succesfully");
+
+        // TODO: Save email and password to localStorage and render the last registered user
+
+        localStorage.setItem('storedEmail', initial);
+        localStorage.setItem('storedPassword', score);
+        renderLastScore();
+    }
+});
