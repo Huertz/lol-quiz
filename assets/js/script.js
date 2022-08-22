@@ -3,22 +3,21 @@ const choice1El = document.getElementById('choice1');;
 const choice2El = document.getElementById('choice2');
 const choice3El = document.getElementById('choice3');
 const choice4El = document.getElementById('choice4');
-var userNameSpan = document.querySelector("#user-email");
-var userScoreSpan = document.querySelector("#user-password");
+const answerEl = document.getElementById('answer');
+const endGameEl = document.getElementById('endGame');
+
 choice1El.addEventListener('click', nextQuestion);
 choice2El.addEventListener('click', nextQuestion);
 choice3El.addEventListener('click', nextQuestion);
 choice4El.addEventListener('click', nextQuestion);
-
 
 document.getElementById('startQuiz').addEventListener('click', function () {
     displayQuestion()
 })
 
 var unique = 0;
-var timeleft = 45;
+var timeleft = 75;
 var currentQuestionIndex = 0;
-
 const questions = [
     {
         question: 'What does Sett W ability do',
@@ -34,9 +33,9 @@ const questions = [
         question: 'What is the best champtions',
         choices: [
             'Sett',
-            'LeBlanc',
-            'Yasuo',
-            'Temmo',
+            'Camille',
+            'Ash',
+            'Ornn',
         ],
         answer: 1
     },
@@ -44,21 +43,21 @@ const questions = [
     {
         question: 'What is the best lane to play',
         choices: [
-            'Sett W to bully champtions',
+            'Mid',
             'Toplane',
-            'It gives gives temporaly sheld and true damege',
-            'choice 4',
+            'Bot/Support',
+            'Jungle',
         ],
         answer: 2
     },
 
     {
-        question: 'What is the worst champion',
+        question: 'The most annoying champion',
         choices: [
-            'Sett W to bully champtions',
-            'It gives gives temporaly sheld and true damege',
-            'chioce 3',
-            'Illaoli',
+            'Yuumi, Vayne, Shaco',
+            'Nasus, Illaoi, Tryndamere',
+            'Teemo, Zed, LeBlanc,',
+            'All',
         ],
         answer: 3
     },
@@ -74,7 +73,7 @@ function displayQuestion() {
         }, 1000);
         unique = 1;
     }
-
+    
     const curr = questions[currentQuestionIndex];
     questionEl.innerText = curr.question;
     choice1El.innerText = curr.choices[0];
@@ -84,27 +83,28 @@ function displayQuestion() {
 }
 
 function nextQuestion(event) {
+    if (questions[currentQuestionIndex].answer != 3) {
+        const correctId = 'choice' + (questions[currentQuestionIndex].answer + 1);
 
-    const correctId = 'choice' + (questions[currentQuestionIndex].answer + 1);
-    if (correctId === event.target.id) {
-        questionEl.textContent = "correct";
+        if (correctId === event.target.id) {
+            // alert('correct')
+            answer.textContent = "correct";
+        }
+        else {
+            answer.textContent = "wrong";
+            // alert('wrong')
+            timeleft = timeleft - 10;
+        }
+        currentQuestionIndex++;
+        if (currentQuestionIndex >= questions.length) {
+            return;
+        }
+        displayQuestion()
     }
     else {
-        questionEl.textContent = "wrong";
-        // alert('wrong')
-        timeleft = timeleft - 10;
-        
+        endGameEl.innerText = "All Done";
     }
-    currentQuestionIndex++;
-    if (currentQuestionIndex >= questions.length) {
-        return
-    }
-    displayQuestion()
 }
 
-function renderLastRegistered() {
-    var storedName = localStorage.getItem("name");
-    var passwordFromLs = localStorage.getItem("storedPassword");
-    userNameSpan.textContent = storedName;
-    userScoreSpan.textContent = passwordFromLs
-}
+// localStorage.setItem('timeleft')
+//         document.getElementById('finalScore')
