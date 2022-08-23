@@ -71,10 +71,14 @@ const questions = [
     },
 ];
 
+var timestop = 0;
+
 function displayQuestion() {
     if (unique == 0) {
         var downloadTimer = setInterval(function () {
+            if(timestop ==0){
             timeleft--;
+            }
             document.getElementById("countdowntimer").textContent = timeleft;
             if (timeleft <= 0)
                 clearInterval(downloadTimer);
@@ -89,7 +93,6 @@ function displayQuestion() {
     choice3El.innerText = curr.choices[2];
     choice4El.innerText = curr.choices[3];
 }
-
 function nextQuestion(event) {
     if (questions[currentQuestionIndex].answer != 3) {
         const correctId = 'choice' + (questions[currentQuestionIndex].answer + 1);
@@ -110,11 +113,13 @@ function nextQuestion(event) {
         displayQuestion()
     }
     else {
+
         endGameEl.innerText = "Quiz Finish";
+        timestop = 1;
+        renderLastScore();
     }
 }
 
-renderLastScore();
 
 function displayMessage(type, message) {
     msgDiv.textContent = message;
@@ -123,27 +128,23 @@ function displayMessage(type, message) {
 
 function renderLastScore() {
     var storedInitial = localStorage.getItem("storedIni");
-    var passwordFromLs = localStorage.getItem("storedScore");
+  
     initialSpan.textContent = storedInitial;
-    userScoreSpan.textContent = passwordFromLs;
-    // TODO: Retrieve the last email and password and render it to the page
+    userScoreSpan.textContent = timeleft;
 }
 
 storeButton.addEventListener("click", function (event) {
     event.preventDefault();
 
     var initial = document.querySelector("#ini").value;
-    var score = document.querySelector("#score").value;
 
     if (initial === "") {
         displayMessage("error", "Initials cannot be blank");
     } else {
         displayMessage("success", "Stored Succesfully");
 
-        // TODO: Save email and password to localStorage and render the last registered user
-
         localStorage.setItem('storedIni', initial);
-        localStorage.setItem('storedScore', score);
+      
         renderLastScore();
     }
 });
