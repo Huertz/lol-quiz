@@ -1,13 +1,13 @@
 
-
 body  {
     background: linear-gradient(to right, #00aaff, #d8102b);
+    color: white;
 }
 
 header h1 {
     text-align: center;
     font-size: 100px;
-    color: white;
+    
 }
 
 h2 {
@@ -16,9 +16,21 @@ h2 {
 
 h3 {
     font-size: 60px;
+    text-align: center;
 }
 h4{ 
-    font-size: 40px;
+    font-size: 20px;
+}
+
+p {
+    text-align: center;
+}
+
+label {
+    align-content: center;
+}
+#sign-up {
+    text-align: center;
 }
 .timer {
     text-align: right;
@@ -32,6 +44,7 @@ nav p{
     text-align: center;
 }
 
+
 .preguntas {
     text-align: center;
 }
@@ -42,4 +55,21 @@ nav p{
 
 #sumit {
     justify-items: center;
+}
+
+#card {
+    text-align: center;
+}
+
+.card h4 {
+    text-align: center;
+}
+
+.register {
+    text-align: center;
+    padding-top: 25px;
+}
+
+#sign-up {
+    margin-top: 10px;
 }

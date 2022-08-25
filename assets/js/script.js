@@ -123,7 +123,7 @@ function nextQuestion(event) {
     }
     else {
 
-        endGameEl.innerText = "Quiz Finish";
+        endGameEl.innerText = "QUIZ FINISH";
         timestop = 1;
         // Renders and stores last score and initial
         renderLastScore();
