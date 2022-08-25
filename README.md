@@ -53,7 +53,7 @@ THEN I can save my initials and score
   [Website link]()
 
   `assets/images`
-   md ![alt text]()
+   md ![alt text](./assets/images/League-of-Legends-Quiz.png)
 
 ## Credits
 
