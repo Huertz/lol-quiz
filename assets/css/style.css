@@ -1,4 +1,4 @@
-
+/* body */
 body  {
     background: linear-gradient(to right, #00aaff, #d8102b);
     color: white;
@@ -9,50 +9,53 @@ header h1 {
     font-size: 100px;
     
 }
-
+/* h2 */
 h2 {
     font-size: 20px;
 }
-
+/* h3 */
 h3 {
     font-size: 60px;
     text-align: center;
 }
+/* h4 */
 h4{ 
     font-size: 20px;
 }
-
+/* p */
 p {
     text-align: center;
 }
-
+/* label */
 label {
     align-content: center;
 }
+/* #sign-up */
 #sign-up {
     text-align: center;
 }
+/* .timer */
 .timer {
     text-align: right;
 }
-
+/* Time left  */
 nav p{
     text-align: right;
 }
-
+/* intro to the quiz */
 .quiz {
     text-align: center;
 }
 
-
+/* the actual questions */
 .preguntas {
     text-align: center;
 }
-
+/* final part of the quiz  */
 #endGame {
     text-align: center;
 }
-
+/* submit button that c */
 #sumit {
     justify-items: center;
 }
@@ -60,20 +63,20 @@ nav p{
 #card {
     text-align: center;
 }
-
+/* REGISTER SCORE SECTION WITH H4*/
 .card h4 {
     text-align: center;
 }
-
+/* register section */
 .register {
     text-align: center;
     padding-top: 25px;
 }
-
+/* store high score */
 #sign-up {
     margin-top: 10px;
 }
-
+/* To start game again refresh page */
 .refresh {
     text-align: center;
 }
