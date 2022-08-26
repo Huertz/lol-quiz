@@ -14,7 +14,7 @@ I builded this project becuase I wanted to know how the API interacts with the H
 The program solves multiple problems. From first creating the function of start buttom to saving score and initials. It was a challenging project for me. I know that the code does not look clean but I think it does the job.  
 
 - What did you learn?
-I learned the concepts of Application Programming Interface. The concepts that found more intresting was to the storege of items. I can found knowing that concept helpful in the future. In addition, also found the time concept really intresting. Overall I still need to master the concepts but I have a good understanding of how API work. 
+I learned the concepts of Application Programming Interface. The concepts that found more intresting was to the storege of items. I can found knowing that concept helpful in the future. In addition, also found the time concept really intresting. Overall I still need to master the concepts but I have a good understanding of how API work. I know it does not look nice but it does the most important aspects of the javascript accepted criteria. 
 
 ## Table of Contents (Optional)
 
@@ -50,7 +50,7 @@ THEN I can save my initials and score
 
 ## Usage
 
-  [Website link]()
+  [Website link](https://huertz.github.io/lol-quiz/)
 
   `assets/images`
    md ![alt text](./assets/images/League-of-Legends-Quiz.png)
@@ -59,13 +59,15 @@ THEN I can save my initials and score
 
 If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
 
-[Javascript]()
-[StackOverFlow]()
-[Concat]()
-[Line 64]()
-[Const]()
-[String Length]()
-[IsNan]()
+[Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+[LocalStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
+
+[Click Event](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event)
+
+[Timer](https://www.w3schools.com/js/js_timing.asp)
+
+[Subtract Timer](https://stackoverflow.com/questions/58964755/subtract-time-from-timer-if-answer-is-wrong-creating-a-quiz-javascript)
 
 
 ## License
